@@ -1,0 +1,271 @@
+<html>     
+  <head>
+    <meta property="og:title" content="Curiosity Driven Project Based Learning"/>
+    <meta property="og:image" content="https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2Fsea_dream.png?1541911939951"/>
+    <meta property="og:description" content="This project introduces fundamentals of computer science and commercial art within an easy to edit 3D Multiplayer Game."/>
+    <meta property="og:url" content="//sea-dream.glitch.me/" />
+    <link rel="manifest" href="/manifest.json">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet" type="text/css">
+    <link href="login.css" rel="stylesheet" type="text/css" />
+    <link href="mobile.css" rel="stylesheet" type="text/css" />
+    <!--<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>-->
+    <script src="https://cdn.glitch.com/dd72d0a0-2747-40ff-8463-f7755366f80f%2Faframe-v0.7.0.min.js"></script>
+    <script src="https://cdn.rawgit.com/feiss/aframe-environment-component/ad57b15d/dist/aframe-environment-component.min.js"></script>
+    <script src="https://rawgit.com/takahirox/aframe-rain/master/build/aframe-rain.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script>
+    <script src="cursor-effects.js"></script>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    <title>☀️</title>
+  </head>
+  <body>
+    <div style="position:absolute">
+      <div id="loading-screen">LOADING...</div>
+    </div>
+    <div id="container" style="position:relative; display:none">
+    <a-scene > 
+      <a-assets>
+        <img src="https://cdn.glitch.com/969cb4c8-d5f5-4980-8ed6-10a2b1fbb574%2F4thave-small.jpg?1505357175431" id="sky" />
+        <img src="https://cdn.glitch.com/51384993-d04d-4eb8-a1c6-b97ba65b8b94%2Fplaster-normal.jpg?1507086697487" id="plaster" />
+      </a-assets>
+
+        
+      <!--<a-entity animation-mixer
+                gltf-model="url(https://cdn.glitch.com/f54ba682-ab47-46e4-bf61-5e68e6053f18%2Fthing-idle.glb?1532828880828)"
+                position="0 0 0"
+                static-body="geometry:sphere"></a-entity>-->
+      
+      
+     
+     
+      
+      
+      
+      <a-entity id="shark"
+                position="0 2 -25" rotation="0 0 0" scale="1 1 1">
+       <a-entity id="shark-model"
+                 position="0 0 10"
+                 rotation="0 -90 0"
+                 animation-mixer
+                 gltf-model="url(https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2FShark.glb?1541686223911)">
+       </a-entity>
+        <a-animation attribute="rotation"
+               dur="10000"
+               fill="forwards"
+               to="0 -360 0"
+               repeat="indefinite"></a-animation>
+      </a-entity>
+      
+      
+      <a-entity id="whale"
+                position="0 20 -55" rotation="0 0 0" scale="1 1 1">
+       <a-entity id="whale-model"
+                 position="0 0 30"
+                 rotation="0 -90 0"
+                 scale="3 3 3"
+                 animation-mixer
+                 gltf-model="url(https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2FWhale.glb?1541852836355)">
+         <a-animation attribute="position" 
+                     direction="alternate-reverse" 
+                     dur="20000" 
+                     from="0 0 30" to="0 -12 30" 
+                     repeat="indefinite">
+          </a-animation>
+         <a-animation attribute="rotation" 
+                     fill="forwards"
+                     direction="alternate-reverse" 
+                     easing="ease-in-sine"
+                     dur="20000" 
+                     from="0 -90 0" to="25 -90 0" 
+                     repeat="indefinite">
+          </a-animation>
+       </a-entity>
+        <a-animation attribute="rotation"
+               dur="40000"
+               fill="forwards"
+               to="0 -360 0"
+               repeat="indefinite"></a-animation>
+      </a-entity>
+      
+      <a-entity id="manta"
+                position="30 4 -35" rotation="0 0 0" scale="1 1 1">
+       <a-entity id="manta-model"
+                 position="0 0 20"
+                 rotation="0 -90 0"
+                 animation-mixer
+                 gltf-model="url(https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2FManta%20ray.glb?1541853958016)">
+         <a-animation attribute="position" 
+                     direction="alternate-reverse" 
+                     dur="20000" 
+                     from="0 0 20" to="0 25 30" 
+                     repeat="indefinite">
+          </a-animation>
+         <a-animation attribute="rotation" 
+                     fill="forwards"
+                     direction="alternate-reverse" 
+                     easing="ease-in-sine"
+                     dur="20000" 
+                     from="0 -90 0" to="15 -90 0" 
+                     repeat="indefinite">
+          </a-animation>
+       </a-entity>
+        <a-animation attribute="rotation"
+               dur="40000"
+               fill="forwards"
+               to="0 -360 0"
+               repeat="indefinite"></a-animation>
+      </a-entity>
+      
+      
+      <a-entity id="plant"
+                position="0 0 -25" rotation="0 0 0" scale="0.1 0.1 0.1">
+       <a-entity id="plant-model"
+                 gltf-model="url(https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2Fseaweed.glb?1541857425734)">
+       </a-entity>
+      </a-entity>
+      
+      <a-entity id="plant2"
+                position="-6 0 -20" rotation="0 0 0" scale="0.1 0.1 0.1">
+       <a-entity id="plant2-model"
+                 gltf-model="url(https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2Fseaweed.glb?1541857425734)">
+       </a-entity>
+      </a-entity>
+      
+      <a-entity id="plant3"
+                position="-8 0 -35" rotation="0 0 0" scale="0.1 0.1 0.1">
+       <a-entity id="plant3-model"
+                 gltf-model="url(https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2Fseaweed.glb?1541857425734)">
+       </a-entity>
+      </a-entity>
+      
+      <a-entity id="plant4"
+                position="-12 0 0" rotation="0 0 0" scale="0.1 0.1 0.1">
+       <a-entity id="plant4-model"
+                 gltf-model="url(https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2Fseaweed.glb?1541857425734)">
+       </a-entity>
+      </a-entity>
+      
+      <a-entity id="plant5"
+                position="-18 0 -40" rotation="0 0 0" scale="0.1 0.1 0.1">
+       <a-entity id="plant5-model"
+                 gltf-model="url(https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2Fseaweed.glb?1541857425734)">
+       </a-entity>
+      </a-entity>
+      
+      <a-entity id="plant6"
+                position="16 0 -36" rotation="0 0 0" scale="0.1 0.1 0.1">
+       <a-entity id="plant6-model"
+                 gltf-model="url(https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2Fseaweed.glb?1541857425734)">
+       </a-entity>
+      </a-entity>
+      
+      <a-entity id="plant7"
+                position="4 0 -24" rotation="0 0 0" scale="0.1 0.1 0.1">
+       <a-entity id="plant7-model"
+                 gltf-model="url(https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2Fseaweed.glb?1541857425734)">
+       </a-entity>
+      </a-entity>
+      
+      <a-entity id="plant8"
+                position="6 0 -4" rotation="0 0 0" scale="0.1 0.1 0.1">
+       <a-entity id="plant8-model"
+                 gltf-model="url(https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2Fseaweed.glb?1541857425734)">
+       </a-entity>
+      </a-entity>
+      
+      <a-entity id="plant9"
+                position="-2 0 -3" rotation="0 0 0" scale="0.1 0.1 0.1">
+       <a-entity id="plant9-model"
+                 gltf-model="url(https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2Fseaweed.glb?1541857425734)">
+       </a-entity>
+      </a-entity>
+    
+      
+      <!-- Environment -->
+      <a-entity id="environment" environment="shadow: true; playArea:1.3; shadowSize: 10; preset:japan; fog:0.8" ></a-entity> 
+      
+      <!--Ground-->
+      <a-box id="ground" position="0 -0.5 0"
+              width="400" height="1" depth="400"
+              opacity="0"
+              static-body></a-box>
+      
+       <!-- Camera -->
+      <a-entity id="player"
+                camera="userHeight: 3.2" 
+                universal-controls="fly: true; easing:60" 
+                position="0 3.2 0"
+                rotation="0 0 0"
+                kinematic-body="radius: 0.8; userHeight:3.2"
+                >
+        <a-entity id="cam-cursor" cursor="fuseTimeout: 2000;"
+                  position="0 0 -1"
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                  material="color: white; shader: flat">
+        </a-entity>
+      </a-entity>  
+         
+      
+    </a-scene>
+    <div id="dialog-container" style="position:absolute; top:0px; left:0px; z-index:1000;width:100%">
+      <dialog id="dialog">
+        <h3 class="modal-header">Send a Message or Change your Avatar</h3>
+        <div class="modal-body">
+          <input id="msg" placeholder="Enter your message.">
+        </div>
+        <footer id="bgm-footer" class="modal-footer">
+          <div id="bgm"></div>
+        </footer>
+        <footer id="btns-footer" class="modal-footer">
+          <div id="btns"></div>
+        </footer>
+      </dialog>
+    </div>
+    <div id="login">
+          <div class="login-background">
+              <div class="login">
+                <div class="login-header">
+                  <h1 id="game-name">Login</h1>
+                </div>
+                <div class="login-form">
+                  <span>Username:</span>
+                  <input id="un" type="text" placeholder="Username"/><br>
+                  <span>Password:</span>
+                  <input id="pw" type="password" placeholder="Password"/>
+                  <br>
+                  <input type="button" value="Login" class="login-button"/>
+                  <br>
+                </div>
+            </div>
+            <div class="error-page">
+              <div class="try-again">Error: Try again?</div>
+            </div>
+          </div>  
+      </div>
+      <div>
+        <div id="thruster-btn" style="float:top"></div>
+        <div id="joystick-container" style="width:50%;float:left"></div> 
+        <div id="pitch-controller" style="width:50%;float:right;height:100%"></div>    
+      </div> 
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client-config.js"></script>
+    <script src="dialog.js"></script>
+    <script src="bgm.js"></script>
+    <script src="sounds.js"></script>
+    <script src="voice.js"></script>
+    <script src="thruster.js"></script>
+    <script src="custom-physics.js"></script>
+    <script src="client-socket-control.js"></script>
+    <script src="collectibles.js"></script>
+    <script src="client.js"></script>
+    <script src="game.js"></script>
+    <script src="mobile.js"></script>
+    <script src="login.js"></script>
+    <script src="pshape-helper.js"></script>
+  </body>
+</html>
