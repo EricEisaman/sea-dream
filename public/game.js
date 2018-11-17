@@ -82,10 +82,12 @@ let bodyHasSound = function(name){
 window.addPoint = function(playerId){
   if(window.socket.id == playerId){
    if(!player.score)player.score = 0;
-   console.log(`Your Score: ${++player.score}`);
+   player.score+=100;
+   window.makeBubbles(['AWESOME!',`YOU NOW HAVE ${player.score} POINTS!`]);
   }else{
    if(!window.otherPlayers[playerId].score)window.otherPlayers[playerId].score = 0;
-   console.log(`${window.otherPlayers[playerId].name}'s Score: ${++window.otherPlayers[playerId].score}`);
+   window.otherPlayers[playerId].score += 100;
+   window.makeBubbles(['SHIVER ME TIMBERS!',`${window.otherPlayers[playerId].name} NOW HAS ${window.otherPlayers[playerId].score} POINTS!`]);
   }
 }
 

@@ -30,7 +30,7 @@ window.config = {
  sounds:{
   playerJoined: {url:'https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2Fdeep_ocean.mp3?1541696086467'},
   playerLeft: {url:'https://cdn.glitch.com/3294c4a3-a3d8-412f-a31e-1e03d1cd1cbd%2Fplayer-leave.mp3?1532440646173'},
-  yay: {url:'https://cdn.glitch.com/162b879e-fd42-40d9-8519-671d783b8c70%2Fyay.mp3?1538839840045',loop:false,volume:0.8}
+  bubbles: {url:'https://cdn.glitch.com/fbe5330c-72c9-4613-8c7d-21b7376284bd%2Fbubbles.mp3?1542414685349',loop:false,volume:0.8}
  },
  msg:{
   color: "#f9b939",
