@@ -33,6 +33,14 @@ module.exports = (io)=>{
           if(Object.keys(players).length === 0){
             socket.emit('request-for-bodies');
             socket.emit('request-for-collectibles');
+          }else{
+            collectibles.forEach((c,index)=>{
+               if(c.collector){
+                 socket.emit('update-collectible',{index:index,collector:c.collector});
+                 console.log('Sending collectible update to new player:');
+                 console.log(c);
+               }
+            });
           }
           console.log("New player has state:",shared_state_data);
           // Add the new player to the object

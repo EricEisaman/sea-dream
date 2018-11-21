@@ -1,5 +1,7 @@
 let height;
+
 window.makeBubbles = function(stringsArray){
+  let bubbles = [];
   stringsArray.forEach((s,i)=>{
    let b = document.createElement('div');
    let v = (s.length)? Math.max(window.innerWidth/3,256):100*Math.random();
@@ -25,20 +27,25 @@ window.makeBubbles = function(stringsArray){
    let a = (s.length)? width:10*width;
    b.style.left = window.innerWidth/2 - a + a*Math.random() +"px";
    document.getElementById('container').appendChild(b);
-   animateBubble(b,i,s);
+   bubbles.push({b:b,i:i,s:s,t:window.innerHeight});
   });
+  animateBubbles(bubbles);
   window.sounds.bubbles.play();
 }
 
-function animateBubble(b,i,s){
-  let t = window.innerHeight;
+function animateBubbles(bubbles){
+  let numRemoved = 0;
   let id = window.setInterval(()=>{
-    t-= (s.length)?i+2:3*Math.random();
-    b.style.top = t + "px";
-    if(t < -height) {
-     window.clearInterval(id);
-     b.remove();
-    }
+    bubbles.forEach(b=>{
+      b.t-= (b.s.length)?b.i+2:4*Math.random();
+      b.b.style.top = b.t + "px";
+      if(b.t < -window.innerHeight) {
+       bubbles.forEach(b=>{
+         b.b.remove();
+       });
+       window.clearInterval(id);
+      }
+    });
   },10);
 }
 
